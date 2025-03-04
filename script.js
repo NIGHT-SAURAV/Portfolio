@@ -34,7 +34,7 @@ window.addEventListener('wheel', (e) => {
 
   setTimeout(() => {
     isScrolling = false;
-  }, 800); // Adjust delay as needed
+  }, 300); // Adjust delay as needed
 });
 
 // Change section title color and nav link color when visible
