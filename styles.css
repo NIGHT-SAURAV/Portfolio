@@ -1,0 +1,284 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow: hidden; /* Hide scrollbar */
+}
+
+/* Background Video */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place video behind content */
+  overflow: hidden;
+}
+
+#bg-video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover; /* Ensure video covers the entire background */
+}
+
+/* Overlay to darken the video for better readability */
+.video-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+}
+
+/* Smooth Scrolling and Scroll Snapping */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+/* Sections */
+section {
+  height: 100vh; /* Full viewport height */
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Center content horizontally */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 80px; /* Add space between nav and section title */
+  position: relative; /* Ensure content is above the video */
+  z-index: 1; /* Place content above the video */
+}
+
+/* Section Titles */
+section h2 {
+  font-size: 3rem; /* Big font size */
+  margin-top: 0;
+  margin-bottom: 40px;
+  color: white; /* Default title color */
+  transition: color 0.3s;
+}
+
+/* Change title color to orange when section is visible */
+section.is-visible h2 {
+  color: orange;
+}
+
+/* Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav ul li a.active {
+  color: orange; /* Active nav link color */
+}
+
+nav ul li a:hover {
+  color: #00ffcc;
+}
+
+/* Home Section */
+#home .home-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh; /* Full viewport height */
+}
+
+#home .left {
+  display: flex;
+  align-items: center; /* Center the photo vertically */
+  justify-content: center;
+  height: 100%;
+}
+
+#home .left img {
+  width: 400px; /* Bigger photo */
+  border-radius: 50%;
+  animation: pop-up 1s ease-out; /* Pop-up animation */
+  position: relative;
+  top: -50px; /* Adjust vertical position */
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#home .right {
+  max-width: 500px;
+  text-align: left; /* Align text to the left */
+}
+
+#home .right h1 {
+  font-size: 3rem; /* Bigger name */
+  margin-bottom: 20px;
+}
+
+#home .right p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* About Me Section */
+#about {
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 100px; /* Small gap from top nav */
+}
+
+#about p {
+  max-width: 800px; /* Limit the width of the paragraph */
+  margin: 0 auto; /* Center the paragraph horizontally */
+  padding: 20px; /* Add some padding */
+  background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+  border-radius: 10px; /* Rounded corners */
+  line-height: 1.6; /* Improve readability */
+  text-align: justify; /* Justify the text for a clean look */
+}
+
+/* Resume Section */
+#resume a {
+  color: #00ffcc;
+  text-decoration: none;
+  border: 2px solid #00ffcc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px; /* Move button above text */
+  display: inline-block;
+}
+
+#resume a:hover {
+  background-color: #00ffcc;
+  color: black;
+}
+
+/* Projects Section */
+#projects .project-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Smaller gap */
+  flex-wrap: wrap;
+}
+
+#projects .project {
+  width: 250px; /* Smaller container */
+  padding: 20px;
+  background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+#projects .project:hover {
+  background-color: rgba(51, 51, 51, 0.8); /* Light black on hover */
+}
+
+#projects .project img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Contact Me Section */
+#contact .contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+#contact .contact-container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Fixed width */
+  height: 60px; /* Fixed height */
+  background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#contact .contact-container a:hover {
+  background-color: rgba(51, 51, 51, 0.8); /* Light black on hover */
+  transform: scale(1.2);
+}
+
+#contact .contact-container img {
+  width: 80%; /* Adjust icon size */
+  height: auto;
+}
+
+#contact footer {
+  position: absolute;
+  bottom: 20px; /* Place footer at the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  line-height: 1.2; /* Minimized line spacing */
+  text-align: center;
+}
+
+/* Section Indicator Lines */
+.section-indicator {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-indicator .line {
+  width: 4px;
+  height: 40px;
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+.section-indicator .line.active {
+  background-color: orange; /* Active line color */
+}
