@@ -1,3 +1,11 @@
+// Ensure the page starts at the Home section
+window.addEventListener('load', () => {
+  if (window.location.hash) {
+    window.location.hash = ''; // Clear the hash from the URL
+  }
+  document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+});
+
 // Smooth Scroll Animation for Navigation Links
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -34,7 +42,7 @@ window.addEventListener('wheel', (e) => {
 
   setTimeout(() => {
     isScrolling = false;
-  }, 300); // Adjust delay as needed
+  }, 800); // Adjust delay as needed
 });
 
 // Change section title color and nav link color when visible
