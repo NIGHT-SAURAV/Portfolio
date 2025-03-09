@@ -324,17 +324,18 @@ nav ul li a:hover {
     max-width: 100%;
     text-align: center;
   }
-
-  #projects .project-container {
-    gap: 20px; /* Reduce gap between projects */
-  }
-
-  #projects .project {
-    width: 45%; /* Two projects per row */
-  }
 }
 
 @media (max-width: 480px) {
+
+  nav ul li a {
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+
+  nav {
+    padding: 5px 0; /* Reduce padding for mobile */
+  }
+  
   /* Phone Styles */
   #home .left img {
     width: 200px; /* Smaller photo for phones */
@@ -345,7 +346,12 @@ nav ul li a:hover {
   }
 
   #projects .project {
-    width: 100%; /* One project per row */
+    width: 100%; /* Full width for mobile */
+    margin-bottom: 20px; /* Add space between projects */
+  }
+
+  #projects .project-container {
+    gap: 10px; /* Reduce gap between projects */
   }
 
   #contact .contact-container {

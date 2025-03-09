@@ -16,7 +16,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
   });
 });
 
-// Section Change on Mouse Scroll
+// Enable scrolling on mobile
 let isScrolling = false;
 
 window.addEventListener('wheel', (e) => {
