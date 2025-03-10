@@ -192,7 +192,7 @@ nav ul li a:hover {
 #resume a:hover {
   background-color: #00ffcc;
   color: black;
-} /* Fixed missing closing brace */
+}
 
 #resume .highlights-container {
   max-width: 800px; /* Same width as About Me section */
@@ -327,7 +327,8 @@ nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
-
+  /* Phone Styles */
+  /* Navigation Bar */
   nav ul li a {
     font-size: 14px; /* Smaller font size for mobile */
   }
@@ -335,35 +336,80 @@ nav ul li a:hover {
   nav {
     padding: 5px 0; /* Reduce padding for mobile */
   }
-  
-  /* Phone Styles */
+
+  /* Home Section */
+  #home .home-content {
+    padding-top: 60px; /* Move content closer to top nav */
+  }
+
   #home .left img {
     width: 200px; /* Smaller photo for phones */
+    margin-top: 0;
+    margin-bottom: 0; /* Add space between photo and text */
+    align-self: flex-start;
+  }
+
+  #home .right {
+    max-width: 100%;
+    text-align: left; /* Align text to the left */
+    padding-left: 20px; /* Add some padding to the left */
   }
 
   #home .right h1 {
     font-size: 2rem; /* Smaller font size for phones */
+    margin-bottom: 10px; /* Reduce space below the heading */
+  }
+
+  #home .right p {
+    font-size: 1rem; /* Smaller font size for phones */
+  }
+
+  /* Projects Section */
+  #projects .project-container {
+    gap: 10px; /* Reduce gap between projects */
+    padding: 10px; /* Add padding to the container */
   }
 
   #projects .project {
-    width: 100%; /* Full width for mobile */
-    margin-bottom: 20px; /* Add space between projects */
+    width: 25%; /* Two projects per row */
+    padding: 10px; /* Reduce padding inside the container */
   }
 
-  #projects .project-container {
-    gap: 10px; /* Reduce gap between projects */
+  #projects .project h3 {
+    font-size: 1.2rem; /* Smaller font size for project titles */
   }
 
+  #projects .project p {
+    font-size: 0.9rem; /* Smaller font size for project descriptions */
+  }
+
+  #projects .project:nth-child(n+4) {
+    width: 30%; /* 2 projects per row */
+  }
+
+  /* Contact Me Section */
   #contact .contact-container {
-    flex-direction: column; /* Stack contact icons vertically */
-    gap: 10px;
+    flex-direction: row; /* Ensure icons are in a single row */
+    gap: 10px; /* Reduce gap between icons */
+    margin-bottom: 20px; /* Reduce space below the icons */
+  }
+
+  #contact .contact-container a {
+    width: 50px; /* Smaller icons */
+    height: 50px;
+  }
+
+  #contact .contact-container img {
+    width: 70%; /* Adjust icon size */
   }
 
   #contact footer {
     font-size: 1rem; /* Smaller font size for footer */
+    bottom: 10px; /* Move footer closer to the bottom */
   }
 
+  /* Hide Section Indicator on Mobile */
   .section-indicator {
-    display: none; /* Hide section indicator on small screens */
+    display: none;
   }
 }
